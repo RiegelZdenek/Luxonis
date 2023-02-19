@@ -20,8 +20,8 @@ export default function App() {
       })
   }
 
-  const apartmentElemets = apartments.map(apartment => (
-    <ApartmentCard key={apartment.id} apartment={apartment} />
+  const apartmentElemets = apartments.map((apartment,i) => (
+    <ApartmentCard key={i} apartment={apartment} />
   ))
 
   const paginationElements = genPageArray(page).map(pageNumber => (

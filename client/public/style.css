@@ -89,22 +89,22 @@ html {
     color: black;
     cursor: pointer;
     font-size: 130%;
-    transition: padding 0.5s;
     margin-bottom: 0px;
 }
 
 .paginationItem.activePage {
-    /* text-decoration: underline; */
     border-bottom: 2px solid black;
 }
 
-.paginationItem:hover {padding: 2px 10px;}
+.paginationItem:hover {
+    border-bottom: 2px solid gray;
+}
 
 .prevImage, .nextImage{
     position: absolute;
     top: 0;
     height: 98%;
-    width: 30%;
+    width: 15%;
     background-color: rgba(0,0,0,0);
     display: flex;
     align-items: center;
@@ -117,7 +117,7 @@ html {
     user-select: none;
 }
 
-.prevImage:hover, .nextImage:hover{
+.image:hover .prevImage, .image:hover .nextImage, .prevImage:hover, .nextImage:hover{
     background-color: rgba(0,0,0,0.2);
     color: rgba(255,255,255,0.6);
 }
@@ -140,7 +140,20 @@ html {
     color: black;
     cursor: pointer;
     font-size: 90%;
-    transition: padding 0.5s;
     margin-bottom: 0px;
     font-weight: bold;
+}
+
+.transitioning{
+    opacity: 0!important;
+    transition: opacity 0.1s;
+}
+
+.transitioningDone{
+    opacity: 1!important;
+    transition: opacity 0.5s;
+}
+
+.transitioning img{
+    visibility: hidden;
 }
